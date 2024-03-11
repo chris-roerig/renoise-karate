@@ -29,11 +29,6 @@ renoise.tool():add_menu_entry{
 }
 
 renoise.tool():add_menu_entry{
-    name = "Sample Editor:Chop:12",
-    invoke = function() slice_in_parts(12) end
-}
-
-renoise.tool():add_menu_entry{
     name = "Sample Editor:Chop:16",
     invoke = function() slice_in_parts(16) end
 }
@@ -60,11 +55,24 @@ function slice_in_parts(num_slices)
         local slice_point = math.floor((num_frames / num_slices) * i)
         sample:insert_slice_marker(slice_point)
     end
+ 
+     -- Fetch the length of the current pattern
+    local patternIndex = song.selected_pattern_index
+    local patternLength = song.patterns[patternIndex].number_of_lines
+    
+     -- Calculate beat sync lines based on the current pattern length 
+     -- and number of slices
+    local beat_sync_lines = math.floor(patternLength / num_slices)
+
+    -- Ensure beat_sync_lines is at least 1
+    beat_sync_lines = math.max(1, beat_sync_lines)   
 
     -- Assuming slices are subsequent samples, set their properties
     for i, slice_sample in ipairs(instrument.samples) do
         if i > 1 then -- Assuming the first sample is the original and not a slice
-            --xoprint(slice_sample)
+            oprint(slice_sample)
+            slice_sample.beat_sync_enabled = true
+            slice_sample.beat_sync_lines = beat_sync_lines
             slice_sample.oneshot = true
             slice_sample.mute_group = 1
             slice_sample.loop_mode = renoise.Sample.LOOP_MODE_OFF
