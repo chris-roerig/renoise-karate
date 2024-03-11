@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RenoiseScriptingTool doc_version="0">
+  <ApiVersion>6.1</ApiVersion>
+  <Id>com.jugwine.karate</Id>
+  <Name>Karate</Name>
+  <Version>1.0.0</Version>
+  <Author>Jugwine</Author>
+  <Description>A simple sample chopping tool</Description>
+</RenoiseScriptingTool>
