@@ -8,10 +8,9 @@ Karate is a Renoise tool designed to enhance your sample editing workflow by add
 
 ## Features
 
-* Quick Chop: Easily slice your samples into equal parts directly from the Sample Editor.
-* Customizable Slicing: Choose from 4, 8, 12, or 16 slices to quickly divide your samples.
-* Intuitive Interface: Access the slicing functions directly from the Sample Editor's context menu for a seamless workflow.
-* Oneshot and Loop Mode Settings: Automatically sets sliced samples to oneshot mode with loop mode turned off, and assigns them to mute group 1 for convenient sample playback.
+* Effortless Sample Chopping: Quickly slice samples into 4, 8, or 16 equal parts directly within the Sample Editor.
+* Dynamic Beat Sync: Automatically enables beat sync for each slice, setting the beat sync lines according to the current pattern length, ensuring that slices are perfectly timed with your track.
+* Customizable Slice Properties: Sets each slice to oneshot mode, assigns them to mute group 1, and disables loop mode, optimizing sample playback for musical creativity.
 
 ## Installation
 
